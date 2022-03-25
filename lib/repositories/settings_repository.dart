@@ -1,12 +1,14 @@
 import 'dart:async';
+import 'package:meta/meta.dart';
 
 import 'package:hive/hive.dart';
 
 import 'package:todo_with_grab/common/_common.dart';
 
-const _key = 'settings';
-
 class SettingsRepository {
+  @visibleForTesting
+  static const key = 'settings';
+
   final _box = dbPot().settingsBox;
 
   StreamSubscription<BoxEvent>? _subscription;
@@ -16,14 +18,14 @@ class SettingsRepository {
   }
 
   void onChange(void Function(Settings) listener) {
-    listener(_box.get(_key) ?? const Settings());
+    listener(_box.get(key) ?? const Settings());
 
     _subscription = _box
-        .watch(key: _key)
+        .watch(key: key)
         .listen((event) => listener(event.value as Settings));
   }
 
   Future<void> update(Settings settings) async {
-    await _box.put(_key, settings);
+    await _box.put(key, settings);
   }
 }
