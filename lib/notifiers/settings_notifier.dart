@@ -11,8 +11,8 @@ class SettingsNotifier extends ValueNotifier<Settings> {
 
   final _repository = settingsRepositoryPot();
 
-  void switchThemeMode(ThemeMode mode) {
+  Future<void> switchThemeMode(ThemeMode mode) async {
     final settings = value.copyWith(themeMode: mode);
-    _repository.update(settings);
+    await _repository.update(settings);
   }
 }

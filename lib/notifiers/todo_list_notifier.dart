@@ -19,26 +19,26 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
     super.dispose();
   }
 
-  void add() {
+  Future<void> add() async {
     final todo = Todo(
       createdAt: DateTime.now(),
       description: editController.text,
     );
-    _repository.add(todo);
+    await _repository.add(todo);
   }
 
-  void updateDescription(Todo todo) {
+  Future<void> updateDescription(Todo todo) async {
     final updatedTodo = todo.copyWith(description: editController.text);
-    _repository.update(updatedTodo);
+    await _repository.update(updatedTodo);
   }
 
-  void updateCompletion(Todo todo, bool completed) {
+  Future<void> updateCompletion(Todo todo, bool completed) async {
     final updatedTodo = todo.copyWith(completed: completed);
-    _repository.update(updatedTodo);
+    await _repository.update(updatedTodo);
   }
 
-  void remove(Todo todo) {
-    _repository.remove(todo);
+  Future<void> remove(Todo todo) async {
+    await _repository.remove(todo);
   }
 
   void switchFilter(TodoFilter filter) {
