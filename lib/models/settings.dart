@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
 class Settings extends Equatable {
-  const Settings({this.themeMode = ThemeMode.light});
+  const Settings({this.themeMode = ThemeMode.system});
 
   final ThemeMode themeMode;
 
