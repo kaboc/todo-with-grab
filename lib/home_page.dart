@@ -57,9 +57,12 @@ class _ListTile extends StatelessWidget {
       confirmDismiss: (_) => ConfirmationDialog.show(context),
       background: Container(
         color: context.theme.highlightColor,
-        alignment: Alignment.centerRight,
-        padding: const EdgeInsets.only(right: 16.0),
-        child: const Icon(Icons.delete),
+        alignment: AlignmentDirectional.centerEnd,
+        padding: const EdgeInsetsDirectional.only(end: 16.0),
+        child: Icon(
+          Icons.delete,
+          color: context.secondaryColor,
+        ),
       ),
       child: ListTile(
         key: ValueKey(todo.id),
