@@ -43,12 +43,12 @@ class _Dialog extends StatelessWidget with Grab {
       ),
       actions: [
         TextButton(
-          child: const Text('Cancel'),
           onPressed: Navigator.of(context).pop,
+          child: const Text('Cancel'),
         ),
         TextButton(
-          child: Text(isNew ? 'Add' : 'OK'),
           onPressed: isValid ? () => _onSubmitted(context) : null,
+          child: Text(isNew ? 'Add' : 'OK'),
         ),
       ],
     );

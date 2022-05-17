@@ -31,9 +31,9 @@ class FilterMenu extends StatelessWidget with Grab {
       itemBuilder: (context) => [
         for (final f in TodoFilter.values)
           PopupMenuItem<TodoFilter>(
-            child: Text(f.name.toSentenceCase()),
             value: f,
             textStyle: filter == f ? highlightStyle : null,
+            child: Text(f.name.toSentenceCase()),
           ),
       ],
     );
