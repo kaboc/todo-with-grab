@@ -6,7 +6,7 @@ import 'package:pot/pot.dart';
 
 import 'package:todo_with_grab/common/_common.dart';
 
-import 'test_db.dart';
+import 'db.dart';
 import 'utils.dart';
 
 SettingsNotifier get settingsNotifier => settingsNotifierPot();
