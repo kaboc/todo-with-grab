@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class AppTheme {
   static final _lightScheme = ColorScheme.fromSeed(
     seedColor: Colors.blue,

@@ -15,8 +15,9 @@ class Db {
       Hive.init(dir.path);
     }
 
-    Hive.registerAdapter(TodoAdapter());
-    Hive.registerAdapter(SettingsAdapter());
+    Hive
+      ..registerAdapter(TodoAdapter())
+      ..registerAdapter(SettingsAdapter());
 
     todoBox = await Hive.openBox<Todo>('todoBox');
     settingsBox = await Hive.openBox<Settings>('settingsBox');

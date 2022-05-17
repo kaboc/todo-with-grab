@@ -45,8 +45,9 @@ class TodoAdapter extends TypeAdapter<Todo> {
 
   @override
   void write(BinaryWriter writer, Todo obj) {
-    writer.writeString(obj.description);
-    writer.writeInt(obj.createdAt.millisecondsSinceEpoch);
-    writer.writeBool(obj.completed);
+    writer
+      ..writeString(obj.description)
+      ..writeInt(obj.createdAt.millisecondsSinceEpoch)
+      ..writeBool(obj.completed);
   }
 }

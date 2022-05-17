@@ -1,3 +1,5 @@
+// ignore_for_file: always_put_control_body_on_new_line
+
 import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
@@ -84,7 +86,7 @@ void main() {
 
     test('updateCompletion() updates todo status', () async {
       await addTodo('abc');
-      await todosNotifier.updateCompletion(todoBox.getAt(0)!, true);
+      await todosNotifier.updateCompletion(todoBox.getAt(0)!, completed: true);
       expect(todoBox.getAt(0)?.description, equals('abc'));
       expect(todoBox.getAt(0)?.completed, isTrue);
       expect(todosNotifier.value.all.first.description, equals('abc'));
@@ -105,7 +107,10 @@ void main() {
 
     test('switchFilter() applies filter to todos', () async {
       await addMultipleTodos(['abc', 'def', 'ghi']);
-      await todosNotifier.updateCompletion(todosNotifier.value.all[1], true);
+      await todosNotifier.updateCompletion(
+        todosNotifier.value.all[1],
+        completed: true,
+      );
 
       todosNotifier.switchFilter(TodoFilter.all);
       expect(todosNotifier.value.filtered, hasLength(3));

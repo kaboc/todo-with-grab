@@ -70,7 +70,7 @@ class _ListTile extends StatelessWidget {
         leading: Checkbox(
           value: todo.completed,
           onChanged: (completed) {
-            notifier.updateCompletion(todo, completed!);
+            notifier.updateCompletion(todo, completed: completed!);
           },
         ),
         onTap: () => EditDialog.show(context, todo: todo),

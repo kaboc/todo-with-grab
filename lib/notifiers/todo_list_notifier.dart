@@ -32,7 +32,7 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
     await _repository.update(updatedTodo);
   }
 
-  Future<void> updateCompletion(Todo todo, bool completed) async {
+  Future<void> updateCompletion(Todo todo, {required bool completed}) async {
     final updatedTodo = todo.copyWith(completed: completed);
     await _repository.update(updatedTodo);
   }

@@ -12,13 +12,13 @@ class EditDialog {
 
     showDialog<void>(
       context: context,
-      builder: (_) => _Dialog(todo, todo == null),
+      builder: (_) => _Dialog(todo, isNew: todo == null),
     );
   }
 }
 
 class _Dialog extends StatelessWidget with Grab {
-  const _Dialog(this.todo, this.isNew);
+  const _Dialog(this.todo, {required this.isNew});
 
   final Todo? todo;
   final bool isNew;
