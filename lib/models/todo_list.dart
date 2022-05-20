@@ -7,7 +7,18 @@ export 'package:todo_with_grab/models/todo.dart';
 enum TodoFilter {
   all,
   active,
-  completed,
+  completed;
+
+  List<Todo> apply(List<Todo> list) {
+    switch (this) {
+      case TodoFilter.all:
+        return list;
+      case TodoFilter.active:
+        return list.where((v) => !v.completed).toList();
+      case TodoFilter.completed:
+        return list.where((v) => v.completed).toList();
+    }
+  }
 }
 
 class TodoList extends Equatable {
@@ -22,16 +33,7 @@ class TodoList extends Equatable {
   @override
   List<Object> get props => [all, filter];
 
-  List<Todo> get filtered {
-    switch (filter) {
-      case TodoFilter.all:
-        return all;
-      case TodoFilter.active:
-        return all.where((v) => !v.completed).toList();
-      case TodoFilter.completed:
-        return all.where((v) => v.completed).toList();
-    }
-  }
+  List<Todo> get filtered => filter.apply(all);
 
   TodoList copyWith({
     List<Todo>? all,
