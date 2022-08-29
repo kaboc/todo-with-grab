@@ -9,7 +9,7 @@ class SettingsRepository {
   @visibleForTesting
   static const key = 'settings';
 
-  final _box = dbPot().settingsBox;
+  Box<Settings> get _box => dbPot().settingsBox;
 
   StreamSubscription<BoxEvent>? _subscription;
 

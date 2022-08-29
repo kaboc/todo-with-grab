@@ -9,7 +9,7 @@ class SettingsNotifier extends ValueNotifier<Settings> {
     _repository.onChange((settings) => value = settings);
   }
 
-  final _repository = settingsRepositoryPot();
+  SettingsRepository get _repository => settingsRepositoryPot();
 
   Future<void> switchThemeMode(ThemeMode mode) async {
     final settings = value.copyWith(themeMode: mode);

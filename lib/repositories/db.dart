@@ -19,7 +19,13 @@ class Db {
       ..registerAdapter(TodoAdapter())
       ..registerAdapter(SettingsAdapter());
 
-    todoBox = await Hive.openBox<Todo>('todoBox');
-    settingsBox = await Hive.openBox<Settings>('settingsBox');
+    todoBox = await Hive.openBox<Todo>(
+      'todoBox',
+      compactionStrategy: (entries, deletedEntries) => deletedEntries > 10,
+    );
+    settingsBox = await Hive.openBox<Settings>(
+      'settingsBox',
+      compactionStrategy: (entries, deletedEntries) => deletedEntries > 10,
+    );
   }
 }

@@ -9,9 +9,9 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
     _repository.onChange((list) => value = value.copyWith(all: list));
   }
 
-  final _repository = todosRepositoryPot();
-
   final editController = TextEditingController();
+
+  TodosRepository get _repository => todosRepositoryPot();
 
   @override
   void dispose() {

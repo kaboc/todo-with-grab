@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:todo_with_grab/common/_common.dart';
 
 class TodosRepository {
-  final _box = dbPot().todoBox;
+  Box<Todo> get _box => dbPot().todoBox;
 
   void Function(List<Todo>)? _listener;
   StreamSubscription<BoxEvent>? _subscription;

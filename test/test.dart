@@ -1,5 +1,3 @@
-// ignore_for_file: always_put_control_body_on_new_line
-
 import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
@@ -31,7 +29,7 @@ void main() {
 
   tearDownAll(() async {
     final db = dbPot();
-    if (db is TestDb) await db.dispose();
+    await (db as TestDb).dispose();
   });
 
   group('Settings', () {
