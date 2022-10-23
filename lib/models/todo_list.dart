@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 
 import 'package:todo_with_grab/models/todo.dart';
 
@@ -7,18 +8,7 @@ export 'package:todo_with_grab/models/todo.dart';
 enum TodoFilter {
   all,
   active,
-  completed;
-
-  List<Todo> apply(List<Todo> list) {
-    switch (this) {
-      case TodoFilter.all:
-        return list;
-      case TodoFilter.active:
-        return list.where((v) => !v.completed).toList();
-      case TodoFilter.completed:
-        return list.where((v) => v.completed).toList();
-    }
-  }
+  completed,
 }
 
 class TodoList extends Equatable {
@@ -33,14 +23,24 @@ class TodoList extends Equatable {
   @override
   List<Object> get props => [all, filter];
 
-  List<Todo> get filtered => filter.apply(all);
+  List<Todo> get filtered {
+    switch (filter) {
+      case TodoFilter.all:
+        return List.of(all);
+      case TodoFilter.active:
+        return List.of(all.where((v) => !v.completed));
+      case TodoFilter.completed:
+        return List.of(all.where((v) => v.completed));
+    }
+  }
 
+  @useResult
   TodoList copyWith({
     List<Todo>? all,
     TodoFilter? filter,
   }) {
     return TodoList(
-      all: all ?? this.all,
+      all: List.of(all ?? this.all),
       filter: filter ?? this.filter,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:meta/meta.dart';
 
 class Todo extends Equatable {
   const Todo({
@@ -17,6 +18,7 @@ class Todo extends Equatable {
 
   int get id => createdAt.millisecondsSinceEpoch;
 
+  @useResult
   Todo copyWith({
     String? description,
     DateTime? createdAt,

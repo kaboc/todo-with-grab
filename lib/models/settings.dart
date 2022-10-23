@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:meta/meta.dart';
 
 class Settings extends Equatable {
   const Settings({this.themeMode = ThemeMode.system});
@@ -11,6 +12,7 @@ class Settings extends Equatable {
   @override
   List<Object> get props => [themeMode];
 
+  @useResult
   Settings copyWith({ThemeMode? themeMode}) {
     return Settings(
       themeMode: themeMode ?? this.themeMode,
