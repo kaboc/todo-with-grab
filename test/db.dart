@@ -19,8 +19,11 @@ class TestDb extends Db {
     settingsBox = await Hive.openBox<Settings>('settingsBox');
   }
 
+  @override
   Future<void> dispose() async {
     await Hive.deleteFromDisk();
     File(_dbDir).deleteSync(recursive: true);
+
+    super.dispose();
   }
 }

@@ -8,7 +8,9 @@ export 'package:todo_with_grab/models/todo.dart';
 enum TodoFilter {
   all,
   active,
-  completed,
+  completed;
+
+  String get asSentenceCase => name[0].toUpperCase() + name.substring(1);
 }
 
 class TodoList extends Equatable {

@@ -14,6 +14,7 @@ export 'package:todo_with_grab/repositories/todos_repository.dart';
 
 final dbPot = Pot(
   Db.new,
+  disposer: (db) => db.dispose(),
 );
 
 final settingsRepositoryPot = Pot(

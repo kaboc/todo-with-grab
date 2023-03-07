@@ -16,9 +16,9 @@ as a minimal todo app.
 - Toggling light/dark theme modes.
 - Storing data persistently with Hive.
 
-## Demo
+## Web app
 
-Click [here][demo] to open the app in your browser.
+Click [here][web_app] to open the app in your browser.
 
 [grab]: https://pub.dev/packages/grab
-[demo]: https://kaboc.github.io/todo-with-grab/
+[web_app]: https://kaboc.github.io/todo-with-grab/

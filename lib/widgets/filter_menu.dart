@@ -33,7 +33,7 @@ class FilterMenu extends StatelessWidget with Grab {
           PopupMenuItem<TodoFilter>(
             value: f,
             textStyle: filter == f ? highlightStyle : null,
-            child: Text(f.name.toSentenceCase()),
+            child: Text(f.asSentenceCase),
           ),
       ],
     );

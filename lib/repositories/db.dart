@@ -9,6 +9,11 @@ class Db {
   late final Box<Todo> todoBox;
   late final Box<Settings> settingsBox;
 
+  void dispose() {
+    todoBox.close();
+    settingsBox.close();
+  }
+
   Future<void> init() async {
     if (!kIsWeb) {
       final dir = await getApplicationSupportDirectory();

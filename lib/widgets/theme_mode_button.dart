@@ -12,7 +12,7 @@ class ThemeModeButton extends StatelessWidget {
     return IconButton(
       tooltip: 'Toggle theme mode',
       icon: Icon(
-        Icons.mode_night,
+        Icons.dark_mode,
         color: isDark ? Colors.yellow : null,
       ),
       onPressed: () => settingsNotifierPot().switchThemeMode(
