@@ -1,11 +1,11 @@
 {
-    "name": "todo_with_grab",
-    "short_name": "todo_with_grab",
+    "name": "Todo",
+    "short_name": "Todo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A demo app of Grab.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

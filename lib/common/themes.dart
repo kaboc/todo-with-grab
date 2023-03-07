@@ -35,5 +35,5 @@ extension BuildContextX on BuildContext {
 
   Color get inversePrimaryColor => theme.colorScheme.inversePrimary;
 
-  TextStyle get subtitle1 => theme.textTheme.subtitle1!;
+  TextStyle get titleMedium => theme.textTheme.titleMedium!;
 }

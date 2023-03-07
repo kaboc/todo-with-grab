@@ -12,7 +12,7 @@ class FilterMenu extends StatelessWidget with Grab {
     final notifier = todoListNotifierPot();
     final filter = context.grabAt(notifier, (TodoList state) => state.filter);
 
-    final highlightStyle = context.subtitle1.copyWith(
+    final highlightStyle = context.titleMedium.copyWith(
       fontWeight: FontWeight.bold,
       color: context.primaryColor,
     );

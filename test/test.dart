@@ -19,7 +19,7 @@ void main() {
 
   setUpAll(() async {
     Pot.forTesting = true;
-    dbPot.replaceForTesting(() => TestDb());
+    dbPot.replaceForTesting(TestDb.new);
 
     final db = dbPot();
     await db.init();

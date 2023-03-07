@@ -13,25 +13,25 @@ export 'package:todo_with_grab/repositories/settings_repository.dart';
 export 'package:todo_with_grab/repositories/todos_repository.dart';
 
 final dbPot = Pot(
-  () => Db(),
+  Db.new,
 );
 
 final settingsRepositoryPot = Pot(
-  () => SettingsRepository(),
+  SettingsRepository.new,
   disposer: (repository) => repository.dispose(),
 );
 
 final todosRepositoryPot = Pot(
-  () => TodosRepository(),
+  TodosRepository.new,
   disposer: (repository) => repository.dispose(),
 );
 
 final settingsNotifierPot = Pot(
-  () => SettingsNotifier(),
+  SettingsNotifier.new,
   disposer: (notifier) => notifier.dispose(),
 );
 
 final todoListNotifierPot = Pot(
-  () => TodoListNotifier(),
+  TodoListNotifier.new,
   disposer: (notifier) => notifier.dispose(),
 );
