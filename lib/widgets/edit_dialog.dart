@@ -28,10 +28,7 @@ class _Dialog extends StatelessWidget with Grab {
     final notifier = todoListNotifierPot();
     final controller = notifier.editController;
 
-    final isValid = context.grabAt(
-      controller,
-      (TextEditingValue value) => value.text.isNotEmpty,
-    );
+    final isValid = controller.grabAt(context, (v) => v.text.isNotEmpty);
 
     return AlertDialog(
       scrollable: true,
