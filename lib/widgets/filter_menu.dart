@@ -21,11 +21,11 @@ class FilterMenu extends StatelessWidget with Grab {
       tooltip: 'Filter Todos',
       icon: Icon(
         Icons.filter_list,
-        color: filter == TodoFilter.all
-            ? null
-            : context.isDark
-                ? context.primaryColor
-                : context.inversePrimaryColor,
+        color: switch (filter) {
+          TodoFilter.all => null,
+          _ when context.isDark => context.primaryColor,
+          _ => context.inversePrimaryColor,
+        },
       ),
       onSelected: notifier.switchFilter,
       itemBuilder: (context) => [

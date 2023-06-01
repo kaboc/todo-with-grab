@@ -30,9 +30,7 @@ extension BuildContextX on BuildContext {
   bool get isDark => theme.brightness == Brightness.dark;
 
   Color get primaryColor => theme.colorScheme.primary;
-
   Color get secondaryColor => theme.colorScheme.secondary;
-
   Color get inversePrimaryColor => theme.colorScheme.inversePrimary;
 
   TextStyle get titleMedium => theme.textTheme.titleMedium!;

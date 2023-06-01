@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.todo_with_grab">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="Todo"
         android:name="${applicationName}"

@@ -26,14 +26,11 @@ class TodoList extends Equatable {
   List<Object> get props => [all, filter];
 
   List<Todo> get filtered {
-    switch (filter) {
-      case TodoFilter.all:
-        return List.of(all);
-      case TodoFilter.active:
-        return List.of(all.where((v) => !v.completed));
-      case TodoFilter.completed:
-        return List.of(all.where((v) => v.completed));
-    }
+    return switch (filter) {
+      TodoFilter.all => List.of(all),
+      TodoFilter.active => List.of(all.where((v) => !v.completed)),
+      TodoFilter.completed => List.of(all.where((v) => v.completed)),
+    };
   }
 
   @useResult
