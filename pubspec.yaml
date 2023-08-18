@@ -23,5 +23,9 @@ dev_dependencies:
   path: ^1.8.3
   test: ^1.24.6
 
+  custom_lint: ^0.5.2
+  grab_lints:
+    git: https://github.com/kaboc/grab-lints.git
+
 flutter:
   uses-material-design: true
