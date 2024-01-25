@@ -17,7 +17,7 @@ class EditDialog {
   }
 }
 
-class _Dialog extends StatelessWidget with Grab {
+class _Dialog extends StatelessWidget {
   const _Dialog(this.todo, {required this.isNew});
 
   final Todo? todo;

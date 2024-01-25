@@ -9,10 +9,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dbPot().init();
 
-  runApp(const App());
+  runApp(
+    const Grab(child: App()),
+  );
 }
 
-class App extends StatelessWidget with Grab {
+class App extends StatelessWidget {
   const App();
 
   @override

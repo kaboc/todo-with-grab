@@ -5,7 +5,7 @@ import 'package:grab/grab.dart';
 import 'package:todo_with_grab/common/_common.dart';
 import 'package:todo_with_grab/widgets/_widgets.dart';
 
-class HomePage extends StatelessWidget with Grab {
+class HomePage extends StatelessWidget {
   const HomePage();
 
   @override

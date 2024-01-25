@@ -4,7 +4,7 @@ import 'package:grab/grab.dart';
 
 import 'package:todo_with_grab/common/_common.dart';
 
-class FilterMenu extends StatelessWidget with Grab {
+class FilterMenu extends StatelessWidget {
   const FilterMenu();
 
   @override
