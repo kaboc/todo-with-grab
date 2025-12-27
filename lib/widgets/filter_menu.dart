@@ -10,7 +10,7 @@ class FilterMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final notifier = todoListNotifierPot();
-    final filter = notifier.grabAt(context, (l) => l.filter);
+    final filter = notifier.grabAt(context, (s) => s.filter);
 
     final highlightStyle = context.titleMedium.copyWith(
       fontWeight: .bold,

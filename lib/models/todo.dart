@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hive_ce/hive_ce.dart';
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart' show useResult;
 
 class Todo extends Equatable {
   const Todo({
@@ -34,7 +34,7 @@ class Todo extends Equatable {
 
 class TodoAdapter extends TypeAdapter<Todo> {
   @override
-  final typeId = 1;
+  final int typeId = 1;
 
   @override
   Todo read(BinaryReader reader) {

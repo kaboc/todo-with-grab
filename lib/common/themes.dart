@@ -5,23 +5,17 @@ class AppTheme {
   static final ColorScheme _lightScheme = .fromSeed(
     seedColor: Colors.blue,
   );
-
   static final ColorScheme _darkScheme = .fromSeed(
     seedColor: Colors.blue,
     brightness: .dark,
   );
 
-  static ThemeData get light {
-    return .from(colorScheme: _lightScheme);
-  }
-
-  static ThemeData get dark {
-    return .from(colorScheme: _darkScheme).copyWith(
-      checkboxTheme: .new(
-        fillColor: .all(_darkScheme.secondary),
-      ),
-    );
-  }
+  static ThemeData get light => .from(colorScheme: _lightScheme);
+  static ThemeData get dark => .from(colorScheme: _darkScheme).copyWith(
+    checkboxTheme: .new(
+      fillColor: .all(_darkScheme.secondary),
+    ),
+  );
 }
 
 extension BuildContextX on BuildContext {

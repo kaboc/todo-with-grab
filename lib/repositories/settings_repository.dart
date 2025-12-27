@@ -1,13 +1,13 @@
 import 'dart:async';
-import 'package:meta/meta.dart';
 
+import 'package:meta/meta.dart' show visibleForTesting;
 import 'package:hive_ce/hive_ce.dart';
 
 import 'package:todo_with_grab/common/_common.dart';
 
 class SettingsRepository {
   @visibleForTesting
-  static const key = 'settings';
+  static const String key = 'settings';
 
   Box<Settings> get _box => dbPot().settingsBox;
 

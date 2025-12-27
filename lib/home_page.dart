@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final notifier = todoListNotifierPot();
-    final list = notifier.grabAt(context, (l) => l.filtered);
-    final filter = notifier.grabAt(context, (l) => l.filter);
+    final list = notifier.grabAt(context, (s) => s.filtered);
+    final filter = notifier.grabAt(context, (s) => s.filter);
 
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show ThemeMode;
 
 import 'package:equatable/equatable.dart';
 import 'package:hive_ce/hive_ce.dart';
@@ -22,7 +22,7 @@ class Settings extends Equatable {
 
 class SettingsAdapter extends TypeAdapter<Settings> {
   @override
-  final typeId = 0;
+  final int typeId = 0;
 
   @override
   Settings read(BinaryReader reader) {

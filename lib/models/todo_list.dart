@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart' show useResult;
 
 import 'package:todo_with_grab/models/todo.dart';
 
