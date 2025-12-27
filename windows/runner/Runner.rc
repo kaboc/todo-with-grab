@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "A demo app of Grab." "\0"
+            VALUE "FileDescription", "A demo app for Grab." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "todo_with_grab" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 kaboc. All rights reserved." "\0"
             VALUE "OriginalFilename", "todo_with_grab.exe" "\0"
-            VALUE "ProductName", "Todo" "\0"
+            VALUE "ProductName", "ToDo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 
 class Settings extends Equatable {
-  const Settings({this.themeMode = ThemeMode.system});
+  const Settings({this.themeMode = .system});
 
   final ThemeMode themeMode;
 
@@ -27,7 +27,7 @@ class SettingsAdapter extends TypeAdapter<Settings> {
   @override
   Settings read(BinaryReader reader) {
     return Settings(
-      themeMode: ThemeMode.values[reader.readInt32()],
+      themeMode: .values[reader.readInt32()],
     );
   }
 

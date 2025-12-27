@@ -9,7 +9,7 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
     _repository.onChange((list) => value = value.copyWith(all: list));
   }
 
-  final editController = TextEditingController();
+  final TextEditingController editController = .new();
 
   TodosRepository get _repository => todosRepositoryPot();
 
@@ -21,7 +21,7 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
 
   Future<void> add() async {
     final todo = Todo(
-      createdAt: DateTime.now(),
+      createdAt: .now(),
       description: editController.text,
     );
     await _repository.add(todo);

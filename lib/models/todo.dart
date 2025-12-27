@@ -40,7 +40,7 @@ class TodoAdapter extends TypeAdapter<Todo> {
   Todo read(BinaryReader reader) {
     return Todo(
       description: reader.readString(),
-      createdAt: DateTime.fromMillisecondsSinceEpoch(reader.readInt()),
+      createdAt: .fromMillisecondsSinceEpoch(reader.readInt()),
       completed: reader.readBool(),
     );
   }

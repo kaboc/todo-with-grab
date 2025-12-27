@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          filter == TodoFilter.all ? 'Todo' : 'Todo - ${filter.name}',
+          filter == .all ? 'Todo' : 'Todo - ${filter.name}',
         ),
         actions: const [
           FilterMenu(),
@@ -52,7 +52,7 @@ class _ListTile extends StatelessWidget {
 
     return Dismissible(
       key: ValueKey(todo.id),
-      direction: DismissDirection.endToStart,
+      direction: .endToStart,
       onDismissed: (_) => notifier.remove(todo),
       confirmDismiss: (_) => ConfirmationDialog.show(context),
       background: Container(

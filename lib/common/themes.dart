@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class AppTheme {
-  static final _lightScheme = ColorScheme.fromSeed(
+  static final ColorScheme _lightScheme = .fromSeed(
     seedColor: Colors.blue,
   );
 
-  static final _darkScheme = ColorScheme.fromSeed(
+  static final ColorScheme _darkScheme = .fromSeed(
     seedColor: Colors.blue,
-    brightness: Brightness.dark,
+    brightness: .dark,
   );
 
   static ThemeData get light {
-    return ThemeData.from(colorScheme: _lightScheme);
+    return .from(colorScheme: _lightScheme);
   }
 
   static ThemeData get dark {
-    return ThemeData.from(colorScheme: _darkScheme).copyWith(
-      checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.all(_darkScheme.secondary),
+    return .from(colorScheme: _darkScheme).copyWith(
+      checkboxTheme: .new(
+        fillColor: .all(_darkScheme.secondary),
       ),
     );
   }

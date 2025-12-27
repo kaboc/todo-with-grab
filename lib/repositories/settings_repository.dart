@@ -18,7 +18,7 @@ class SettingsRepository {
   }
 
   void onChange(void Function(Settings) listener) {
-    listener(_box.get(key) ?? const Settings());
+    listener(_box.get(key) ?? const .new());
 
     _subscription = _box
         .watch(key: key)

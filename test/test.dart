@@ -45,7 +45,7 @@ void main() {
     });
 
     test('switchThemeMode() updates theme mode', () async {
-      await settingsNotifier.switchThemeMode(ThemeMode.dark);
+      await settingsNotifier.switchThemeMode(.dark);
       final mode = settingsBox.get(SettingsRepository.key)?.themeMode;
       expect(mode, equals(ThemeMode.dark));
       expect(settingsNotifier.value.themeMode, equals(ThemeMode.dark));
@@ -110,15 +110,15 @@ void main() {
         completed: true,
       );
 
-      todosNotifier.switchFilter(TodoFilter.all);
+      todosNotifier.switchFilter(.all);
       expect(todosNotifier.value.filtered, hasLength(3));
 
-      todosNotifier.switchFilter(TodoFilter.active);
+      todosNotifier.switchFilter(.active);
       expect(todosNotifier.value.filtered, hasLength(2));
       expect(todosNotifier.value.filtered[0].description, equals('ghi'));
       expect(todosNotifier.value.filtered[1].description, equals('abc'));
 
-      todosNotifier.switchFilter(TodoFilter.completed);
+      todosNotifier.switchFilter(.completed);
       expect(todosNotifier.value.filtered, hasLength(1));
       expect(todosNotifier.value.filtered[0].description, equals('def'));
     });

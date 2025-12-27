@@ -16,7 +16,7 @@ class ThemeModeButton extends StatelessWidget {
         color: isDark ? Colors.yellow : null,
       ),
       onPressed: () => settingsNotifierPot().switchThemeMode(
-        isDark ? ThemeMode.light : ThemeMode.dark,
+        isDark ? .light : .dark,
       ),
     );
   }

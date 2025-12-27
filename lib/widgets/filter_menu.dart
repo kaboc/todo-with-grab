@@ -13,7 +13,7 @@ class FilterMenu extends StatelessWidget {
     final filter = notifier.grabAt(context, (l) => l.filter);
 
     final highlightStyle = context.titleMedium.copyWith(
-      fontWeight: FontWeight.bold,
+      fontWeight: .bold,
       color: context.primaryColor,
     );
 
@@ -22,7 +22,7 @@ class FilterMenu extends StatelessWidget {
       icon: Icon(
         Icons.filter_list,
         color: switch (filter) {
-          TodoFilter.all => null,
+          .all => null,
           _ when context.isDark => context.primaryColor,
           _ => context.inversePrimaryColor,
         },

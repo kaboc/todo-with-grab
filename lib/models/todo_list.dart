@@ -8,7 +8,8 @@ export 'package:todo_with_grab/models/todo.dart';
 enum TodoFilter {
   all,
   active,
-  completed;
+  completed
+  ;
 
   String get asSentenceCase => name[0].toUpperCase() + name.substring(1);
 }
@@ -27,9 +28,9 @@ class TodoList extends Equatable {
 
   List<Todo> get filtered {
     return switch (filter) {
-      TodoFilter.all => List.of(all),
-      TodoFilter.active => List.of(all.where((v) => !v.completed)),
-      TodoFilter.completed => List.of(all.where((v) => v.completed)),
+      .all => .of(all),
+      .active => .of(all.where((v) => !v.completed)),
+      .completed => .of(all.where((v) => v.completed)),
     };
   }
 
@@ -39,7 +40,7 @@ class TodoList extends Equatable {
     TodoFilter? filter,
   }) {
     return TodoList(
-      all: List.of(all ?? this.all),
+      all: .of(all ?? this.all),
       filter: filter ?? this.filter,
     );
   }

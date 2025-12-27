@@ -1,3 +1,5 @@
+// ignore_for_file: specify_nonobvious_property_types
+
 import 'package:pot/pot.dart';
 
 import 'package:todo_with_grab/notifiers/settings_notifier.dart';
