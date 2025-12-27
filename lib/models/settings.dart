@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:equatable/equatable.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive_ce.dart';
 import 'package:meta/meta.dart';
 
 class Settings extends Equatable {
