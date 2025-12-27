@@ -2,7 +2,7 @@ import 'package:todo_with_grab/common/_common.dart';
 
 Future<void> addTodo(String description) async {
   todoEditNotifierPot.replace(
-    () => TodoEditNotifier(initialTodo: null),
+    () => TodoEditNotifier(todo: null),
   );
   final editNotifier = todoEditNotifierPot()..updateDescription(description);
   await editNotifier.save();

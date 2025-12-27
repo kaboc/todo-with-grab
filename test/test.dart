@@ -71,7 +71,7 @@ void main() {
       expect(todo.description, 'abc');
       expect(todo.completed, isFalse);
 
-      todoEditNotifierPot.replace(() => TodoEditNotifier(initialTodo: todo));
+      todoEditNotifierPot.replace(() => TodoEditNotifier(todo: todo));
       final editNotifier = todoEditNotifierPot()..updateDescription('def');
       await editNotifier.save();
 

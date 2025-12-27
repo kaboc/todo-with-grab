@@ -13,7 +13,7 @@ class EditDialog {
       context: context,
       builder: (_) => Pottery(
         overrides: [
-          todoEditNotifierPot.set(() => TodoEditNotifier(initialTodo: todo)),
+          todoEditNotifierPot.set(() => TodoEditNotifier(todo: todo)),
         ],
         builder: (context) {
           return const _Dialog();

@@ -3,14 +3,14 @@ import 'package:flutter/foundation.dart' show ValueNotifier;
 import 'package:todo_with_grab/common/_common.dart';
 
 class TodoEditNotifier extends ValueNotifier<Todo> {
-  TodoEditNotifier._({required Todo initialTodo, required this.isNew})
-    : super(initialTodo);
+  TodoEditNotifier._({required Todo todo, required this.isNew})
+    : super(todo);
 
   // ignore: sort_unnamed_constructors_first
-  factory TodoEditNotifier({required Todo? initialTodo}) {
+  factory TodoEditNotifier({required Todo? todo}) {
     return TodoEditNotifier._(
-      initialTodo: initialTodo ?? Todo.none(),
-      isNew: initialTodo == null,
+      todo: todo ?? Todo.none(),
+      isNew: todo == null,
     );
   }
 
