@@ -25,11 +25,12 @@ void main() {
   });
 
   tearDownAll(() async {
-    final db = dbPot();
-    await (db as TestDb).dispose();
+    final db = dbPot() as TestDb;
+    await db.dispose();
   });
 
   tearDown(() async {
+    todoEditNotifierPot.resetAsPending();
     await settingsBox.clear();
     await todoBox.clear();
   });
