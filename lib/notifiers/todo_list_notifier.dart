@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart' show ValueNotifier;
-import 'package:flutter/widgets.dart' show TextEditingController;
 
 import 'package:todo_with_grab/common/_common.dart';
 
@@ -10,28 +9,7 @@ class TodoListNotifier extends ValueNotifier<TodoList> {
     _repository.onChange((list) => value = value.copyWith(all: list));
   }
 
-  final TextEditingController editController = .new();
-
   TodosRepository get _repository => todosRepositoryPot();
-
-  @override
-  void dispose() {
-    editController.dispose();
-    super.dispose();
-  }
-
-  Future<void> add() async {
-    final todo = Todo(
-      createdAt: .now(),
-      description: editController.text,
-    );
-    await _repository.add(todo);
-  }
-
-  Future<void> updateDescription(Todo todo) async {
-    final updatedTodo = todo.copyWith(description: editController.text);
-    await _repository.update(updatedTodo);
-  }
 
   Future<void> updateCompletion(Todo todo, {required bool completed}) async {
     final updatedTodo = todo.copyWith(completed: completed);

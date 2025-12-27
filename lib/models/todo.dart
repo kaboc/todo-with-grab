@@ -9,6 +9,13 @@ class Todo extends Equatable {
     this.completed = false,
   });
 
+  factory Todo.none() {
+    return Todo(
+      description: '',
+      createdAt: DateTime(0),
+    );
+  }
+
   final String description;
   final DateTime createdAt;
   final bool completed;
@@ -17,6 +24,7 @@ class Todo extends Equatable {
   List<Object> get props => [description, createdAt, completed];
 
   int get id => createdAt.millisecondsSinceEpoch;
+  bool get isValid => description.trim().isNotEmpty;
 
   @useResult
   Todo copyWith({

@@ -29,6 +29,11 @@ void main() {
     await (db as TestDb).dispose();
   });
 
+  tearDown(() async {
+    await settingsBox.clear();
+    await todoBox.clear();
+  });
+
   group('Settings', () {
     setUp(() async {
       settingsRepositoryPot.reset();
@@ -49,6 +54,35 @@ void main() {
     });
   });
 
+  group('Editing todo', () {
+    test('Saving new todo adds uncompleted todo', () async {
+      await addTodo('abc');
+
+      final todo = todoBox.getAt(0)!;
+      expect(todo.description, 'abc');
+      expect(todo.completed, isFalse);
+      expect(todosNotifier.value.all.first, todo);
+    });
+
+    test('Saving existing todo updates only description', () async {
+      await addTodo('abc');
+
+      final todo = todoBox.getAt(0)!;
+      expect(todo.description, 'abc');
+      expect(todo.completed, isFalse);
+
+      todoEditNotifierPot.replace(() => TodoEditNotifier(initialTodo: todo));
+      final editNotifier = todoEditNotifierPot()..updateDescription('def');
+      await editNotifier.save();
+
+      final updatedTodo = todoBox.getAt(0)!;
+      expect(updatedTodo.description, 'def');
+      expect(updatedTodo.createdAt, todo.createdAt);
+      expect(updatedTodo.completed, todo.completed);
+      expect(todosNotifier.value.all.first, updatedTodo);
+    });
+  });
+
   group('Todo', () {
     setUp(() async {
       todosRepositoryPot.reset();
@@ -59,24 +93,6 @@ void main() {
     test('Todo list is initially empty', () {
       expect(todoBox.isEmpty, isTrue);
       expect(todosNotifier.value.all, isEmpty);
-    });
-
-    test('add() adds uncompleted todo', () async {
-      await addTodo('abc');
-      expect(todoBox.getAt(0)?.description, 'abc');
-      expect(todoBox.getAt(0)?.completed, isFalse);
-      expect(todosNotifier.value.all.first.description, 'abc');
-      expect(todosNotifier.value.all.first.completed, isFalse);
-    });
-
-    test('updateDescription() updates todo description', () async {
-      await addTodo('abc');
-      todosNotifier.editController.text = 'def';
-      await todosNotifier.updateDescription(todoBox.getAt(0)!);
-      expect(todoBox.getAt(0)?.description, 'def');
-      expect(todoBox.getAt(0)?.completed, isFalse);
-      expect(todosNotifier.value.all.first.description, 'def');
-      expect(todosNotifier.value.all.first.completed, isFalse);
     });
 
     test('updateCompletion() updates todo status', () async {

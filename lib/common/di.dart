@@ -1,14 +1,16 @@
 // ignore_for_file: specify_nonobvious_property_types
 
-import 'package:pot/pot.dart';
+import 'package:pottery/pottery.dart' show Pot;
 
 import 'package:todo_with_grab/notifiers/settings_notifier.dart';
+import 'package:todo_with_grab/notifiers/todo_edit_notifier.dart';
 import 'package:todo_with_grab/notifiers/todo_list_notifier.dart';
 import 'package:todo_with_grab/repositories/db.dart';
 import 'package:todo_with_grab/repositories/settings_repository.dart';
 import 'package:todo_with_grab/repositories/todos_repository.dart';
 
 export 'package:todo_with_grab/notifiers/settings_notifier.dart';
+export 'package:todo_with_grab/notifiers/todo_edit_notifier.dart';
 export 'package:todo_with_grab/notifiers/todo_list_notifier.dart';
 export 'package:todo_with_grab/repositories/db.dart';
 export 'package:todo_with_grab/repositories/settings_repository.dart';
@@ -36,5 +38,9 @@ final settingsNotifierPot = Pot(
 
 final todoListNotifierPot = Pot(
   TodoListNotifier.new,
+  disposer: (notifier) => notifier.dispose(),
+);
+
+final todoEditNotifierPot = Pot.pending<TodoEditNotifier>(
   disposer: (notifier) => notifier.dispose(),
 );

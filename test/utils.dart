@@ -1,9 +1,11 @@
 import 'package:todo_with_grab/common/_common.dart';
 
 Future<void> addTodo(String description) async {
-  final notifier = todoListNotifierPot();
-  notifier.editController.text = description;
-  await notifier.add();
+  todoEditNotifierPot.replace(
+    () => TodoEditNotifier(initialTodo: null),
+  );
+  final editNotifier = todoEditNotifierPot()..updateDescription(description);
+  await editNotifier.save();
 }
 
 Future<void> addMultipleTodos(List<String> descriptions) async {
