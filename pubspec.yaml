@@ -10,13 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  equatable: ^2.0.5
-  grab: ^1.0.0-dev.1
+  equatable: ^2.0.7
+  grab: ^1.0.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   meta: ^1.17.0
-  path_provider: ^2.1.2
-  pot: ^0.7.1
+  path_provider: ^2.1.5
+  pot: ^0.9.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0

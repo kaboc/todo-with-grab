@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
 import 'package:hive/hive.dart';
-import 'package:pot/pot.dart';
 
 import 'package:todo_with_grab/common/_common.dart';
 
@@ -18,7 +17,6 @@ void main() {
   late final Box<Todo> todoBox;
 
   setUpAll(() async {
-    Pot.forTesting = true;
     dbPot.replaceForTesting(TestDb.new);
 
     final db = dbPot();
